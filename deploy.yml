@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-list-deploy
+  labels:
+    name: todo-app
+    app: demo-app
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      name: todo-list-pod
+      app: todolist
+  template:
+    metadata:
+      name: todoapp
+      labels:
+        name: todo-list-pod
+        app: todolist
+    spec:
+      containers:
+        - name: todo
+          image: prajwalg42/todoapp:v2
+          ports:
+            - containerport: 8000
