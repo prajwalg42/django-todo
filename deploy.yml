@@ -22,4 +22,4 @@ spec:
         - name: todo
           image: prajwalg42/todoapp:v2
           ports:
-            - containerport: 8000
+            - containerPort: 8000
